@@ -12,9 +12,10 @@ export default styled(Button)`
    border: none;
    background: transparent;
    border: ${({border}) => border ? `1px solid ${colors.mediumGray}` : ""};
-   border-radius: 12px;
-   padding: 10px 20px;
-   font-size: 1rem;
+   border-radius: 0.8rem;
+   padding: 0.6rem 1.2rem;
+   font-size: 0.9rem;
+   font-family: 'Epilogue', sans-serif;
    color: ${colors.mediumGray};
    cursor: pointer;
    transition: 0.2s;

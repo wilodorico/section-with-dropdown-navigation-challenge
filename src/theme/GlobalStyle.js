@@ -10,9 +10,10 @@ const GlobalStyle = createGlobalStyle`
    }
 
    body {
+      font-family: 'Epilogue', sans-serif;
       font-size: 16px;
-      color: ${colors.almostBlack};
       background-color: ${colors.almostWhite};
+      color: ${colors.almostBlack};
       transition: 600ms;
    }
 
