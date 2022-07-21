@@ -2,33 +2,44 @@ import React from 'react'
 import styled from 'styled-components'
 import { colors } from '../theme/colors'
 
-const DropdownMenu = ({ className, title }) => {
+const DropdownMenu = ({ className, data }) => {
   return (
-    <div className={className}>
-      {title}
-      <svg
-        className='icon-svg'
-        width='10'
-        height='6'
-        xmlns='http://www.w3.org/2000/svg'
-      >
-        <path  fill='none' d='m1 1 4 4 4-4' />
-      </svg>
-    </div>
+    <ul className={className}>
+      {data.map((item, index) => (
+        <li key={index}>
+          {item.icon && <img src={item.icon} alt={`icon ${item.title}`} />}
+          {item.title}
+        </li>
+      ))}
+    </ul>
   )
 }
 
 export default styled(DropdownMenu)`
-  stroke: ${colors.mediumGray};
-  stroke-width: 1.5;
-  margin: 1px 5px;
+  position: absolute;
+  top: 35px;
+  right: 5px;
+  width: max-content;
+  display: none;
+  flex-direction: column;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 0.6rem;
 
-  &:hover {
-    color: ${colors.almostBlack};
-    stroke: ${colors.almostBlack};
-  }
+  li {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-bottom: 1rem;
+    color: ${colors.mediumGray};
+    font-size: 0.9rem;
 
-  .icon-svg {
-    margin: 1px 5px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    & img {
+      margin-right: 0.8rem;
+    }
   }
 `
